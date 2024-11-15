@@ -1,0 +1,126 @@
+Poker Game Demo
+Name: Sierra Smith
+Date Created: 11/15/2024
+
+Program Description: 
+
+This program uses the random.shuffle method and a class (Deck) for simulating a poker game.
+The class uses the .shuffle method on the card_list and deals a hand of 5 cards from the end
+of the list using the .pop method. The player gets to choose which cards they want to replace -
+those cards go into the discard pile and are replaced with random cards from the card_list.
+
+
+Functions used in the Program (list in order as they are called):
+
+
+1. Function Name: main 
+ 
+     Description: Beginning and ending function of the program. Contains all code for the game demo.
+
+     Parameters: None  
+
+     Variables: 
+	
+	1. DIV(global string) - divider used for welcome message.
+	2. dk(class object) - instantiates the Deck class.
+	3. str_nums(string input) - user input indicating which cards they want to replace
+	4. str_nums_list(list) - contains user input that was split by a ", " delimiter
+	5. int_nums(list) - a list that holds newly converted user input (converted into integers)
+	6. indexes(list) - list that will be filled with integers referencing indexes
+	7. ind(integer) - starting index for a "for" loop
+	8. i(integer) - integer from the int_nums list
+	9. discard_card(string) - unwanted card from the cards_in_play_list
+
+     Logical Steps: 
+
+	1. Print a welcome message indicating that we're playing Poker.
+	2. Print a "dealing your hand" message.
+	3. Instantiate the Deck class.
+	4. Use the .deal method from Deck to deal new cards to the player and display them.
+	5. Get input from the user indicating which cards they want to replace.
+	6. Split the string input by ", " and store the separate strings in a list.
+	7. Convert each string in the list to integers and store them in a new list.
+	8. Define a list that will hold indexes.
+	9. Make a "for" loop that converts the user input into valid indexes of the cards they want to replace.
+	10. Minus one from each integer in the "for" loop and append them to the "indexes" list.
+	11. Make a separate "for" loop that uses each number in the "indexes" list to locate the unwanted cards in 		cards_in_play_list and append them to the discards_list.
+	12. Make another separate "for" loop that compares the cards in discard_list with cards_in_play_list;
+		each card that matches is removed from the cards_in_play_list.
+	13. Make another separate "for" loop that deals a new card to the player for each number counted in the 		"indexes" list.
+	14. Print a "drawing" message.
+	15. The player's updated hand is displayed with new cards that replaced the unwanted cards.
+	16. Print an end-of-demo message.
+
+     Returns: None
+
+
+Classes used in the Program (list in order as they are called):
+
+
+1. Class Name: Deck
+	
+	Description: Resembles a deck of cards; also includes methods for shuffling and dealing the cards.
+
+	Parameters: 
+		
+	   1. n_decks(integer) - predefined integer (1) indicating how many card decks will be used.
+	
+	Variables:
+	  
+	   1. self.card_list(list) - list of all cards in the "deck" that includes pictograms of each suit (♥♠♦♣)
+	   2. self.cards_in_play(list) - list that will contain the player's cards
+	   3. self.discards_list(list) - list that will hold all the discarded cards
+
+	Methods:
+
+	1. Method Name: deal
+ 
+     	   	Description: method for dealing new cards and reshuffling the discards_list when there are no cards 			left in the card_list.
+
+     	   	Parameters: None
+
+     	   	Variables: 
+			
+
+			1. self.card_list(list) - list of all cards in the "deck" that includes pictograms of each 				suit (♥♠♦♣).
+	   		2. self.cards_in_play(list) - list that will contain the player's cards
+	  		3. self.discards_list(list) - list that will hold all the discarded cards
+			4. new_card(string) - a card (string) from the card_list that replaces the player's 					unwanted card.
+
+     		Logical Steps: 
+
+			1. Define "if" statement that compares the length of card_list to 1.
+			2. If the length of the card_list is less than 1, the discards_list is shuffled and 					assigned to card_list.
+			3. The discards_list is cleared and a "reshuffling" message is printed.
+			4. A "card" is extracted from the card_list by using the .pop method and is assigned to 				new_card.
+			5. The new_card is appended to cards_in_play.
+			6. If the card_list length is 1 or more, the .deal method only iterates steps 4-5.
+  
+     		Returns: new_card(string) - a card (string) from the card_list that replaces the player's 					unwanted card.
+
+	2. Method Name: new_hand
+ 
+     	   	Description: Method that mixes all the cards back together and rids the player's hand of cards.
+
+     	   	Parameters: None
+
+     	   	Variables: 
+
+			1. self.discards_list(list) - list that will hold all the discarded cards
+			2. self.cards_in_play(list) - list that will contain the player's cards
+
+     		Logical Steps: 
+
+			1. Add the discards_list and cards_in_play_list together and reassign it to discards_list.
+			2. Use the .clear method to clear the cards_in_play_list.
+
+     		Returns: None
+		
+Logical Steps:
+
+	1. Call the main() function.
+
+
+Link to your repository: https://github.com/Cyb3rS1/Poker-Game-Demo
+
+
